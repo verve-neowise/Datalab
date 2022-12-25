@@ -1,0 +1,22 @@
+
+
+POST http://localhost:7070/api/auth/login
+Content-Type: application/json
+
+{
+    "username": "neowise",
+    "password": "1234"
+}
+
+
+###
+
+POST http://localhost:7070/api/auth/register
+Content-Type: application/json
+
+{
+    "username": "neowise",
+    "password": "1234",
+    "name": "Neowise",
+    "group": "Node.js"
+}
