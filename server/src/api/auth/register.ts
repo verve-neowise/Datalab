@@ -5,7 +5,7 @@ import { createUser, findUser } from "../../services/user.service"
 
 export const RegisterSchema: Schema = {
     username: "string",
-    password: "string",
+    password: "string?",
     name: "string",
     group: "string"
 }
