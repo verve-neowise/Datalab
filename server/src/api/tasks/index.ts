@@ -1,7 +1,6 @@
 import { Router } from 'express'
 
 import { requireAuth, requireAdmin } from '../../middlewares/authorization'
-import { body } from '../../middlewares/validator'
 import addTask from './add-task'
 import deleteTask from './delete-task'
 import getTaskDetails from './get-task-details'
@@ -10,10 +9,12 @@ import updateTask from './update-task'
 
 const router = Router()
 
-router.get('/:lid', requireAuth(), getTasks)
-router.get('/:lecture/:id', requireAuth(), getTaskDetails)
-router.post('/:lecture', requireAdmin(),  addTask)
-router.put('/:lecture/:id', requireAdmin(), updateTask)
-router.delete('/:lecture/:id', requireAdmin(),  deleteTask)
+router.get('/', requireAuth(), getTasks)
+router.get('/:id', requireAuth(), getTaskDetails)
+
+router.post('/', requireAdmin(),  addTask)
+
+router.put('/:id', requireAdmin(), updateTask)
+router.delete('/:id', requireAdmin(),  deleteTask)
 
 export default router

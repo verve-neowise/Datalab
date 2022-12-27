@@ -10,6 +10,17 @@ export function createLecture(lecture: LectureDto) {
     })
 }
 
+export function updateLecture(id: number, lecture: LectureDto) {
+    return prisma.lecture.update({
+        where: {
+            id
+        },
+        data: {
+            ...lecture
+        }
+    })
+}
+
 export function findLecture(lectureId: number) {
     return prisma.lecture.findFirst({
         where: {

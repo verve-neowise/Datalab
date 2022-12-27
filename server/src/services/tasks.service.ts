@@ -18,7 +18,7 @@ export function findTask(id: number) {
     })
 }
 
-export function allTasks(lectureId: number) {
+export function allTasksByLecture(lectureId: number) {
     return prisma.task.findMany({
         where: {
             lectureId
@@ -26,10 +26,27 @@ export function allTasks(lectureId: number) {
     })
 }
 
+export function allTasks() {
+    return prisma.task.findMany()
+}
+
 export function deleteTask(id: number) {
     return prisma.task.delete({
         where: {
             id
+        }
+    })
+}
+
+export function updateTask(id: number, task: TaskDto) {
+    return prisma.task.update({
+        where: {
+            id
+        },
+        data: {
+             name: task.name,
+             description: task.description,
+             content: task.content
         }
     })
 }
