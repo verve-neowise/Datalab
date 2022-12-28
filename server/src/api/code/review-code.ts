@@ -1,6 +1,6 @@
 import { Request, Response } from "express";
 import { CodeDto } from "../../models/code";
-import { addSolution, deleteSolution, findSolutionByTaskAndUser } from "../../services/solutions.service";
+import { addSolution, deleteSolution, deleteSolutionById, findSolutionByTaskAndUser } from "../../services/solutions.service";
 import runCode from "./run-code";
 
 export default async (req: Request, res: Response) => {
@@ -20,7 +20,7 @@ export default async (req: Request, res: Response) => {
             const exists = solution != null
 
             if (exists) {
-                await deleteSolution(solution.id)
+                await deleteSolutionById(solution.id)
             }
             await addSolution(taskId, id, codeDto.solution)
         }

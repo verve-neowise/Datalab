@@ -21,7 +21,16 @@ export function updateSolution(solutionId: number, solution: string) {
     })
 }
 
-export function deleteSolution(id: number) {
+export function deleteSolution(taskId: number, userId: number) {
+    return prisma.solution.deleteMany({
+        where: {
+            taskId,
+            userId
+        }
+    })
+}
+
+export function deleteSolutionById(id: number) {
     return prisma.solution.delete({
         where: {
             id

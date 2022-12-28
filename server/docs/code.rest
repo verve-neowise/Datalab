@@ -1,0 +1,24 @@
+@url = http://localhost:7070/api
+
+@adminToken = c87295742b4e578cbd830b91acdcc9a7
+@userToken = c87295742b4e578cbd830b91acdcc9a7
+
+POST {{url}}/code/test
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+    "solution": "module.exports = function (a, b) { return a + b } ",
+    "taskId": 2
+}
+
+###
+
+POST {{url}}/code/review
+Authorization: {{userToken}}
+Content-Type: application/json
+
+{
+    "solution": "module.exports = function (a, b) { return a / b } ",
+    "taskId": 2
+}
