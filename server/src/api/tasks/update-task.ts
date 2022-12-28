@@ -19,7 +19,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
             message: "Task " + id + " updated",
             task: new TaskResponse(
                 task,
-                null,
+                undefined,
                 cases.map(_case => new CaseResponse(_case))
             )
         })

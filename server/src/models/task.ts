@@ -17,11 +17,11 @@ export class TaskResponse {
     readonly content: string
     readonly lectureId: number
     readonly isComplete: boolean
-    readonly cases: CaseResponse[] | null
-    readonly solution: string | null
+    readonly cases: CaseResponse[] | undefined
+    readonly solution: string | undefined
 
     constructor(
-        task: Task, solution: Solution | null = null, cases: CaseResponse[] | null = null
+        task: Task, solution: Solution | undefined = undefined, cases: CaseResponse[] | undefined = undefined
     ){
         this.id = task.id
         this.name = task.name
@@ -30,7 +30,7 @@ export class TaskResponse {
         this.lectureId = task.lectureId
 
         this.isComplete = solution != null
-        this.solution = solution != null ? solution.solution : null
+        this.solution = solution != null ? solution.solution : undefined
         this.cases = cases
     }
 }

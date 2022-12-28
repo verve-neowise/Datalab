@@ -16,7 +16,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
         const solutions = await findUserSolutions(user.id)
 
         res.json({
-            message: "All tasks",
+            message: lectureId ? `Lecture ${lectureId} tasks` : "All tasks",
             tasks: tasks.map(task => 
                 new TaskResponse(
                     task,

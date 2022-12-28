@@ -1,0 +1,64 @@
+@url = http://localhost:7070/api
+
+@adminToken = c87295742b4e578cbd830b91acdcc9a7
+@userToken = c87295742b4e578cbd830b91acdcc9a7
+
+
+GET {{url}}/tasks
+Authorization: {{adminToken}}
+
+###
+
+GET {{url}}/tasks?lecture=1
+Authorization: {{adminToken}}
+
+###
+
+GET {{url}}/tasks/2
+Authorization: {{adminToken}}
+
+###
+
+POST {{url}}/tasks
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "name": "Summ of #2",
+    "description": "Summ of two number",
+    "content": "input two a and b numbers and return summ of those numbers",
+    "cases": [
+        {
+            "name": "Simple numbers",
+            "input": "{ a: 10, b: 25 }",
+            "expect": "35"
+        }
+    ],
+    "lectureId": 1
+}
+
+
+###
+
+PUT {{url}}/tasks/2
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "name": "Division of #3",
+    "description": "Division of two number",
+    "content": "input two a and b numbers and return division of those numbers",
+    "cases": [
+        {
+            "name": "Simple numbers",
+            "input": "{ a: 125, b: 5 }",
+            "expect": "25"
+        }
+    ],
+    "lectureId": 1
+}
+
+###
+
+DELETE {{url}}/tasks/3
+Authorization: {{adminToken}}

@@ -4,7 +4,9 @@ import { prisma } from "./client"
 export function createTask(lectureId: number, task: TaskDto) {
     return prisma.task.create({
         data: {
-            ...task,
+            name: task.name,
+            content: task.content,
+            description: task.description,
             lectureId
         }
     })

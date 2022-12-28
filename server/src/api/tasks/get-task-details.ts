@@ -27,7 +27,7 @@ export default async (req: Request, res: Response, next: NextFunction) => {
             message: "Task " + id + " details",
             task: new TaskResponse(
                 task, 
-                solution, 
+                solution ?? undefined, 
                 cases.map(_case => new CaseResponse(_case))
             )
         })

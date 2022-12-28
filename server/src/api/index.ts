@@ -8,6 +8,7 @@ import requestLogger from "../middlewares/request-logger";
 import auth from './auth'
 import lectures from "./lectures";
 import tasks from './tasks'
+import code from './code'
 
 const router = Router()
 
@@ -16,6 +17,7 @@ router.use(requestLogger())
 router.use('/auth', auth)
 router.use('/lectures', lectures)
 router.use('/tasks', tasks)
+router.use('/code', code)
 
 router.use(errorHandler())
 
