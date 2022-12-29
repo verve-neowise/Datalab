@@ -21,8 +21,9 @@ export class Application {
         this.startFunctions.push(callback)
     }
 
-    apply(execute: Module) {
+    apply(name: string, execute: Module) {
         execute(this)
+        console.log(`apply '${name}' module`);
     }
 
     start() {

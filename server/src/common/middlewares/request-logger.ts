@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express"
 import chalk from "chalk"
 import moment from 'moment'
-import { log } from "../util/console"
+import { log } from "../../util/console"
 
 export default () => {
     return async (req: Request, res: Response, next: NextFunction) => {

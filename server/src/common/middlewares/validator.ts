@@ -105,10 +105,19 @@ const checkProperty = (body: any, property: string, requirement: Requirement): E
     if (isExists) {
         const type = typeof body[property]
 
-        if (type != requirement.type) {
+        if (requirement.type == 'array') {
+            console.log(body[property]);
+            if (!Array.isArray(body[property])) {
+                return {
+                    property,
+                    reason: "must be a " + requirement.type + " but found " + type
+                }
+            }
+        }
+        else if (type != requirement.type) {
             return {
                 property,
-                reason: "must be a " + requirement.type
+                reason: "must be a " + requirement.type + " but found " + type
             }
         }
     }

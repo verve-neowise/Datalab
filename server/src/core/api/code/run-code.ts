@@ -1,4 +1,4 @@
-import { executeCode } from "../../infastructure/code-runner";
+import { executeCode } from "../../infrastructure/code-runner";
 import { CodeDto } from "../../models/code";
 import { findCases } from "../../services/cases.service";
 import { findTask } from "../../services/tasks.service";
