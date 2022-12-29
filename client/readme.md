@@ -1,6 +1,5 @@
 # Datalab frontend client
 
-
 > ! add  to package.json scripts
 
 ```json
@@ -8,4 +7,3 @@
     "run-server": "cd ../server && npm run dev"
 }
 ```
-

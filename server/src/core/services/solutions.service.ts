@@ -1,4 +1,4 @@
-import { prisma } from "../../common/services/client";
+import { prisma } from "../../shared/database/client";
 
 export function addSolution(taskId: number, userId: number, solution: string) {
     return prisma.solution.create({

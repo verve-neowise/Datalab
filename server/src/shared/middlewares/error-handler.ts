@@ -1,7 +1,6 @@
 import { Request, Response, NextFunction } from "express"
 import chalk from "chalk"
 import moment from "moment"
-import { log } from "../../util/console"
 
 export default () => {
 
@@ -16,9 +15,9 @@ export default () => {
 }
 
 function printHead(time: string, method: string, url: string) {
-    log(`[${chalk.gray(time)}] ${chalk.redBright(method)} ${chalk.red(url)}`)
+    console.log(`[${chalk.gray(time)}] ${chalk.redBright(method)} ${chalk.red(url)}`)
 }
 
 function printError(error: any) {
-    log(chalk.blackBright(error.toString()))
+    console.log(chalk.blackBright(error.toString()))
 }

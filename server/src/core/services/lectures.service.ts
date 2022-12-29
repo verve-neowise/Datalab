@@ -1,5 +1,5 @@
 import { LectureDto } from "../models/lecture"
-import { prisma } from "../../common/services/client"
+import { prisma } from "../../shared/database/client"
 
 
 export function createLecture(lecture: LectureDto) {

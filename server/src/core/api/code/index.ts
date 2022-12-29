@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
 import { requireAuth } from '../../middlewares/authorization'
-import { body } from '../../../common/middlewares/validator'
+import { body } from '../../../shared/middlewares/validator'
 
 import { CodeSchema } from './run-code'
 import reviewCode from './review-code'

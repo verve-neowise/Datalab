@@ -4,7 +4,7 @@ import {
     requireAuth as commonRequireAuth, 
     requireAdmin as commonRequireAdmin,  
     UserDetailsProvider
-} from '../../common/middlewares/authorization'
+} from '../../shared/middlewares/authorization'
 
 const provideUser: UserDetailsProvider = (token: string) => findUserByToken(token)
 

@@ -1,7 +1,7 @@
 import { Router } from 'express'
 
 import { requireAuth, requireAdmin } from '../../middlewares/authorization'
-import { body } from '../../../common/middlewares/validator'
+import { body } from '../../../shared/middlewares/validator'
 import addTask, { TaskSchema } from './add-task'
 import deleteTask from './delete-task'
 import getTaskDetails from './get-task-details'

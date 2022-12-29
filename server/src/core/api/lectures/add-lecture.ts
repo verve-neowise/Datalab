@@ -1,8 +1,7 @@
 import { NextFunction, Request, Response } from "express"
-import { Schema } from '../../../common/middlewares/validator'
+import { Schema } from '../../../shared/middlewares/validator'
 import { LectureDto, LectureResponse } from "../../models/lecture"
 import { createLecture } from "../../services/lectures.service"
-
 
 export const LectureSchema: Schema =  {
     name: "string",

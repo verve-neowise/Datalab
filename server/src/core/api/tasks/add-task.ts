@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import { Schema } from "../../../common/middlewares/validator"
+import { Schema } from "../../../shared/middlewares/validator"
 import { TaskDto, TaskResponse } from "../../models/task"
 import { createCases } from "../../services/cases.service"
 import { createTask } from "../../services/tasks.service"

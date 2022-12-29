@@ -1,5 +1,5 @@
 import { NextFunction, Request, Response } from "express"
-import { Schema } from "../../../common/middlewares/validator"
+import { Schema } from "../../../shared/middlewares/validator"
 import { UserDto, UserResponse } from "../../models/user"
 import { createUser, findUser } from "../../services/user.service"
 

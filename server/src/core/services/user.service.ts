@@ -1,5 +1,5 @@
 import { UserDto } from "../models/user";
-import { prisma } from "../../common/services/client";
+import { prisma } from "../../shared/database/client";
 import md5 from 'md5'
 
 export async function findUser(username: string) {

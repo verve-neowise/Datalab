@@ -1,6 +1,6 @@
 import { Case } from '@prisma/client';
 import { CaseDto } from '../models/case';
-import { prisma } from '../../common/services/client'
+import { prisma } from '../../shared/database/client'
 
 export async function createCases(taskId: number, cases: CaseDto[]) {
 

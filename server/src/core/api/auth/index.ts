@@ -1,5 +1,5 @@
 import { Router } from 'express'
-import { body } from '../../../common/middlewares/validator'
+import { body } from '../../../shared/middlewares/validator'
 import login, { LoginSchema } from './login'
 import register, { RegisterSchema } from './register'
 

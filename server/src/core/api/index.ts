@@ -1,8 +1,8 @@
 import { Router } from "express";
 
 // middlewares
-import errorHandler from "../../common/middlewares/error-handler";
-import requestLogger from "../../common/middlewares/request-logger";
+import errorHandler from "../../shared/middlewares/error-handler";
+import requestLogger from "../../shared/middlewares/request-logger";
 
 // api features
 import auth from './auth'

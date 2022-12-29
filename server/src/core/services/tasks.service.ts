@@ -1,5 +1,5 @@
 import { TaskDto } from "../models/task"
-import { prisma } from "../../common/services/client"
+import { prisma } from "../../shared/database/client"
 
 export function createTask(lectureId: number, task: TaskDto) {
     return prisma.task.create({
