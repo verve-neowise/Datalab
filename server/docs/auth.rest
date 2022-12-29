@@ -1,6 +1,11 @@
+@url = http://localhost:7070/api
+@userToken = b5b73fae0d87d8b4e2573105f8fbe7bc
+@adminToken = c87295742b4e578cbd830b91acdcc9a7
 
+###
 
-POST http://localhost:7070/api/auth/login
+# Логин
+POST {{url}}/auth/login
 Content-Type: application/json
 
 {
@@ -10,12 +15,14 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:7070/api/auth/register
+# Регистрация
+
+POST {{url}}/auth/register
 Content-Type: application/json
 
 {
-    "username": "neowise",
+    "username": "user",
     "password": "1234",
-    "name": "Neowise",
+    "name": "Test user",
     "group": "Node.js"
 }

@@ -1,13 +1,38 @@
-GET http://localhost:7070/api/lectures
-Authorization: c87295742b4e578cbd830b91acdcc9a7
+@url = http://localhost:7070/api
+@userToken = b5b73fae0d87d8b4e2573105f8fbe7bc
+@adminToken = c87295742b4e578cbd830b91acdcc9a7
 
 ###
 
-POST http://localhost:7070/api/lectures
-Authorization: c87295742b4e578cbd830b91acdcc9a7
+# Get all Lectures
+
+GET {{url}}/lectures
+Authorization: {{userToken}}
+
+###
+
+// Create new lecture 
+// [!] admin required
+
+POST {{url}}/lectures
+Authorization: {{adminToken}}
 Content-Type: application/json
 
 {
     "name": "Javascript Intro",
+    "content": "When to use JSONPlaceholder is a free online REST API that you can use whenever you need some fake data. It can be in a README on GitHub, for a demo on CodeSandbox, in code examples on Stack Overflow, ...or simply to test things locally."
+}
+
+###
+
+// Update lecture by id
+// [!] admin required
+
+PUT {{url}}/lectures/1
+Authorization: {{adminToken}}
+Content-Type: application/json
+
+{
+    "name": "Javascript Beginner",
     "content": "When to use JSONPlaceholder is a free online REST API that you can use whenever you need some fake data. It can be in a README on GitHub, for a demo on CodeSandbox, in code examples on Stack Overflow, ...or simply to test things locally."
 }

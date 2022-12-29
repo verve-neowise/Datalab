@@ -1,24 +1,37 @@
 @url = http://localhost:7070/api
-
+@userToken = b5b73fae0d87d8b4e2573105f8fbe7bc
 @adminToken = c87295742b4e578cbd830b91acdcc9a7
-@userToken = c87295742b4e578cbd830b91acdcc9a7
 
+###
+
+# Get all exists tasks
+# Tasks without test cases
 
 GET {{url}}/tasks
-Authorization: {{adminToken}}
+Authorization: {{userToken}}
 
 ###
+
+# Get tasks by lecture id
+# Tasks without test cases
+
+# * lecture - id of lecture
 
 GET {{url}}/tasks?lecture=1
-Authorization: {{adminToken}}
+Authorization: {{userToken}}
 
 ###
+
+# Get task details by id
+# Includes tests cases
 
 GET {{url}}/tasks/2
-Authorization: {{adminToken}}
+Authorization: {{userToken}}
 
 ###
 
+# Create new task for lecture with lectureId
+# [!] admin required
 POST {{url}}/tasks
 Authorization: {{adminToken}}
 Content-Type: application/json
@@ -40,6 +53,10 @@ Content-Type: application/json
 
 ###
 
+# Update exists task by id
+# [!] endpoint removes old task cases and add new
+# [!] admin required
+
 PUT {{url}}/tasks/2
 Authorization: {{adminToken}}
 Content-Type: application/json
@@ -59,6 +76,10 @@ Content-Type: application/json
 }
 
 ###
+
+# Delete exists task by id
+# [!] endpoint removes task and test cases
+# [!] admin required
 
 DELETE {{url}}/tasks/3
 Authorization: {{adminToken}}

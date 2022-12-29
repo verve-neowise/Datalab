@@ -1,14 +1,18 @@
 @url = http://localhost:7070/api
 
+@userToken = b5b73fae0d87d8b4e2573105f8fbe7bc
 @adminToken = c87295742b4e578cbd830b91acdcc9a7
-@userToken = c87295742b4e578cbd830b91acdcc9a7
+
+### 
+
+# send code to test task test cases and returns result
 
 POST {{url}}/code/test
 Authorization: {{userToken}}
 Content-Type: application/json
 
 {
-    "solution": "module.exports = function (a, b) { return a + b } ",
+    "solution": "module.exports = function (ax, b) { return a + b } ",
     "taskId": 2
 }
 
