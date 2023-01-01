@@ -1,39 +1,33 @@
-import { Button, Card, Col, Container, Input, Text } from '@nextui-org/react'
-import { useState } from 'react'
-import Login from './pages/Login'
-import Register from './pages/Register'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 
-type Mode = 'register' | 'login'
+import Login from './ui/pages/auth/Login'
+import Register from './ui/pages/auth/Register'
+import LectureList from './ui/pages/lectures/LectureList'
+
+import ProtectedRoute from './ui/containers/ProtectedRoute'
+
+import NotFound from './ui/pages/NotFound'
+import ReadLecture from './ui/pages/lectures/ReadLecture'
+import TaskScreen from './ui/pages/tasks/TaskScreen'
 
 function App() {
-
-  const [mode, setMode] = useState<Mode>('login')
-
-  return (
-    <Container css={{ minHeight: '100vh' }} display='flex' justify='center' alignItems='center'>
-      <Card css={{
-        maxW: "400px"
-      }}>
-        <Card.Header>
-          <Text b> Login </Text>
-        </Card.Header>
-
-        <Card.Divider />
-
-        <Card.Body>
-          {
-            mode == 'login' && <Login onChangeMode={setMode}/>
-          }
-          {
-            mode == 'register' && <Register onChangeMode={setMode}/>
-          }
-        </Card.Body>
-
-        <Card.Divider />
-
-      </Card>
-    </Container>
-  )
+    return (
+        <BrowserRouter>
+            <Routes>
+                <Route index element={<Navigate to="/lectures" />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/register' element={<Register />} />
+                <Route path='/lectures'>
+                    <Route index element={
+                        <ProtectedRoute element={<LectureList />} />
+                    } />
+                    <Route path='/lectures/:id' element={<ReadLecture />} />
+                    <Route path='/lectures/:id/tasks' element={<TaskScreen />} />
+                </Route>
+                <Route path='*' element={<NotFound />} />
+            </Routes>
+        </BrowserRouter>
+    )
 }
 
 export default App

@@ -1,10 +1,11 @@
 @url = http://localhost:7070/api
-@userToken = b5b73fae0d87d8b4e2573105f8fbe7bc
+@userToken = c87295742b4e578cbd830b91acdcc9a7
 @adminToken = c87295742b4e578cbd830b91acdcc9a7
 
 ###
 
 # Логин
+
 POST {{url}}/auth/login
 Content-Type: application/json
 

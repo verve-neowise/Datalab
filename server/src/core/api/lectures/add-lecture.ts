@@ -5,7 +5,8 @@ import { createLecture } from "../../services/lectures.service"
 
 export const LectureSchema: Schema =  {
     name: "string",
-    content: "string"
+    content: "string",
+    description: "string"
 }
 
 export default async (req: Request, res: Response, next: NextFunction) => {

@@ -6,7 +6,7 @@ generator client {
 }
 
 datasource db {
-  provider = "postgresql"
+  provider = "sqlite"
   url      = env("DATABASE_URL")
 }
 
@@ -29,27 +29,28 @@ model Task {
   description String
   content     String
 
-  lectureId    Int
+  lectureId Int
 }
 
 model Case {
-  id          Int    @id @default(autoincrement())
-  name String
-  input String
+  id     Int    @id @default(autoincrement())
+  name   String
+  input  String
   expect String
 
   taskId Int
 }
 
 model Solution {
-  id          Int    @id @default(autoincrement())
-  userId      Int
-  taskId      Int
-  solution    String
+  id       Int    @id @default(autoincrement())
+  userId   Int
+  taskId   Int
+  solution String
 }
 
 model Lecture {
-  id          Int   @id @default(autoincrement())
+  id          Int    @id @default(autoincrement())
   name        String
   content     String
+  description String
 }
