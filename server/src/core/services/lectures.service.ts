@@ -30,7 +30,13 @@ export function findLecture(lectureId: number) {
 }
 
 export function findLectures() {
-    return prisma.lecture.findMany()
+    return prisma.lecture.findMany({
+        select: {
+            id: true,
+            description: true,
+            name: true
+        }
+    })
 }
 
 export function deleteLecture(id: number) {

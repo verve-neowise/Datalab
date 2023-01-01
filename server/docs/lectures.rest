@@ -1,5 +1,5 @@
 @url = http://localhost:7070/api
-@userToken = b5b73fae0d87d8b4e2573105f8fbe7bc
+@userToken = c87295742b4e578cbd830b91acdcc9a7
 @adminToken = c87295742b4e578cbd830b91acdcc9a7
 
 ###
@@ -19,7 +19,8 @@ Authorization: {{adminToken}}
 Content-Type: application/json
 
 {
-    "name": "Javascript Intro",
+    "name": "An Introduction to JavaScript",
+    "description": "JavaScript was initially created to “make web pages alive”. The programs in this language are called scripts.\n They can be written right in a web page's HTML and run automatically as the page loads. \nScripts are provided and executed as plain text. They don't need special preparation or compilation to run.",
     "content": "When to use JSONPlaceholder is a free online REST API that you can use whenever you need some fake data. It can be in a README on GitHub, for a demo on CodeSandbox, in code examples on Stack Overflow, ...or simply to test things locally."
 }
 
@@ -34,5 +35,6 @@ Content-Type: application/json
 
 {
     "name": "Javascript Beginner",
+    "description": "Javascript Intro",
     "content": "When to use JSONPlaceholder is a free online REST API that you can use whenever you need some fake data. It can be in a README on GitHub, for a demo on CodeSandbox, in code examples on Stack Overflow, ...or simply to test things locally."
 }
