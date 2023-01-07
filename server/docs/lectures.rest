@@ -1,6 +1,6 @@
 @url = http://localhost:7070/api
-@userToken = c87295742b4e578cbd830b91acdcc9a7
-@adminToken = c87295742b4e578cbd830b91acdcc9a7
+@userToken = b5b73fae0d87d8b4e2573105f8fbe7bc
+@adminToken = b5b73fae0d87d8b4e2573105f8fbe7bc
 
 ###
 
@@ -26,8 +26,8 @@ Content-Type: application/json
 
 ###
 
-DELETE {{url}}/lectures/1
-Authorization: {{userToken}}
+DELETE {{url}}/lectures/4
+Authorization: {{adminToken}}
 
 ###
 

@@ -7,7 +7,7 @@ import addLecture, { LectureSchema } from './add-lecture'
 import getLectures from './get-lectures'
 import updateLecture from './update-lecture'
 import getLecture from './get-lecture'
-import { deleteLecture } from '../../services/lectures.service'
+import deleteLecture from './delete-lecture'
 
 const router = Router()
 
