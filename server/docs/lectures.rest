@@ -26,6 +26,11 @@ Content-Type: application/json
 
 ###
 
+DELETE {{url}}/lectures/1
+Authorization: {{userToken}}
+
+###
+
 // Update lecture by id
 // [!] admin required
 
